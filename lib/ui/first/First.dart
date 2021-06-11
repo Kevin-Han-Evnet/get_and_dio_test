@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_and_dio_test/controller/Controller.dart';
+import 'package:get_and_dio_test/transition/MyTransitions.dart';
 
-
-import 'package:get_and_dio_test/ui/controller/Controller.dart';class First extends StatelessWidget {
+class First extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +14,7 @@ import 'package:get_and_dio_test/ui/controller/Controller.dart';class First exte
             Get.snackbar("Hi", "I'm modern snackbar");
           },
         ),
-        title: Text("title".trArgs(['John'])),
+        title: Text("title".trArgs(['한상철'])),
       ),
       body: Center(
         child: Column(
@@ -37,6 +38,18 @@ import 'package:get_and_dio_test/ui/controller/Controller.dart';class First exte
                 Get.updateLocale(Locale('en', 'UK'));
               },
             ),
+            ElevatedButton(
+              child: Text('Next Route'),
+              onPressed: () {
+                Get.toNamed('/second');
+              },
+            ),
+            ElevatedButton(
+              child: Text (MyTranslations.BTN_T.tr),
+              onPressed: () {
+                Get.toNamed('/test');
+              }
+            )
           ],
         ),
       ),

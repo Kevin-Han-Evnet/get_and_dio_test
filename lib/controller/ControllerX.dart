@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:get_and_dio_test/ui/data/User.dart';
+import 'package:get_and_dio_test/data/User.dart';
 
 class ControllerX extends GetxController {
   final count1 = 0.obs;

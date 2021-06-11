@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 
 class MyTranslations extends Translations {
+
+  static const String BTN_T = "btn_dio_retrofit_test_label";
+
   @override
   Map<String, Map<String, String>> get keys => {
     'en': {
@@ -14,6 +17,10 @@ class MyTranslations extends Translations {
     },
     'pt_BR': {
       'title': 'Olá do Brasil',
+    },
+    'ko_KR': {
+      'title': '내이름은 %s입니다.',
+      BTN_T : "가보자 한번"
     },
   };
 }

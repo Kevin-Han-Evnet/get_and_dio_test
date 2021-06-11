@@ -2,7 +2,9 @@
     package="com.kevin.getdiotest.get_and_dio_test">
    <application
         android:label="get_and_dio_test"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
