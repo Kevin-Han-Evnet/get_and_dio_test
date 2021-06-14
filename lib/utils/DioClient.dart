@@ -6,13 +6,15 @@ import 'logger_utils.dart';
 
 abstract class DioClient {
 
-  static final dio = Dio()..interceptors.add(
-    InterceptorsWrapper(
-      onRequest: onRequestWrapper,
-      onResponse: onResponseWrapper,
-      onError: onErrorWrapper,
-    ),
-  );   // Provide a dio instance
+  static final dio = Dio()
+    ..interceptors.add(
+        InterceptorsWrapper(
+          onRequest: onRequestWrapper,
+          onResponse: onResponseWrapper,
+          onError: onErrorWrapper,
+        ),
+      )
+    ..options.headers["Demo-Header"] = "demo header";
 
 
 
@@ -65,7 +67,7 @@ abstract class DioClient {
   //error handling
   static void onErrorWrapper(DioError error, ErrorInterceptorHandler handler) async {
     if (error == DioErrorType.connectTimeout) {
-      customLogger.e(error.message);
+      customLogger.e(error.error);
     }
 
     customLogger.d(

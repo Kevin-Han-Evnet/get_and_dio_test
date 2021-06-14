@@ -1,24 +1,27 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:get/get.dart' hide Response;
+import 'package:get/get.dart';
 import 'package:get_and_dio_test/api/TestApiClient.dart';
+import 'package:get_and_dio_test/data/dtos/something/SomethingFuckedDto.dart';
 import 'package:get_and_dio_test/utils/DioClient.dart';
 import 'package:get_and_dio_test/utils/logger_utils.dart';
-import '../utils/logger_utils.dart';
 
 class TestController extends GetxController {
 
-  late List<PopularInfoDto> data;
+  SomethingFuckedDto? data;
+  final List<FuckedItemDto> list = <FuckedItemDto>[].obs;
+
+  @override
+  void onInit () {
+    list.clear();
+  }
 
   Future<void> getData ()async {
 
-    // Provide a dio instance
-    DioClient.dio.options.headers["Demo-Header"] = "demo header";   // config your dio headers globally
+    list.clear();
 
     final client = TestApiClient(DioClient.dio);
-    client.getData({}).then((data) {
-      customLogger.i(data);
+    await client.getData({}).then((result) {
+      data = result;
     }).catchError((Object obj) {
       // non-200 error goes here.
       switch (obj.runtimeType) {
@@ -30,6 +33,9 @@ class TestController extends GetxController {
         default:
       }
     });
+
+    // data = await client.getData({});
+    list.addAll(data!.gangnamMineralWaterInfo!.row!);
 
   }
 }
