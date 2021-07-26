@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_and_dio_test/constants.dart';
 
-import 'transition/MyTransitions.dart';
+import 'config/MyTransations.dart';
 
 void main() {
   if (kReleaseMode) {

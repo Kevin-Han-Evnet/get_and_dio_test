@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 class MyTranslations extends Translations {
 
   static const String BTN_T = "btn_dio_retrofit_test_label";
+  static const String TITLE_T = "title";
 
   @override
   Map<String, Map<String, String>> get keys => {
@@ -19,7 +20,7 @@ class MyTranslations extends Translations {
       'title': 'Olá do Brasil',
     },
     'ko_KR': {
-      'title': '내이름은 %s입니다.',
+      TITLE_T : '내이름은 %s입니다.',
       BTN_T : "가보자 한번"
     },
   };

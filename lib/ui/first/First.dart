@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_and_dio_test/controller/Controller.dart';
-import 'package:get_and_dio_test/transition/MyTransitions.dart';
+import 'package:get_and_dio_test/config/MyTransations.dart';
 
 class First extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class First extends StatelessWidget {
             Get.snackbar("Hi", "I'm modern snackbar");
           },
         ),
-        title: Text("title".trArgs(['한상철'])),
+        title: Text(MyTranslations.TITLE_T.trArgs(['한상철'])),
       ),
       body: Center(
         child: Column(
